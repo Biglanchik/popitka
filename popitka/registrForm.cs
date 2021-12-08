@@ -131,6 +131,18 @@ namespace popitka
                 return;
             }
 
+            if (log.Text == "Введите логин")
+            {
+                MessageBox.Show("Введите логин!");
+                return;
+            }
+
+            if (pass.Text == "Введите пароль")
+            {
+                MessageBox.Show("Введите пароль!");
+                return;
+            }
+
             if (isUserExist())
                 return;
 
