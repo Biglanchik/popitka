@@ -48,9 +48,9 @@ namespace popitka
 
         private void UserNameFild_Enter(object sender, EventArgs e)
         {
-           if(UserNameFild.Text == "Введите Имя")
-              UserNameFild.Text = "";
-              UserNameFild.ForeColor = Color.Black;
+            if (UserNameFild.Text == "Введите Имя")
+                UserNameFild.Text = "";
+            UserNameFild.ForeColor = Color.Black;
         }
 
         private void UserNameFild_Leave(object sender, EventArgs e)
@@ -65,9 +65,9 @@ namespace popitka
         private void UserSernameFild_Enter(object sender, EventArgs e)
         {
             if (UserSernameFild.Text == "Введите Фамилию")
-            { 
+            {
                 UserSernameFild.Text = "";
-                UserSernameFild.ForeColor = Color.Black; 
+                UserSernameFild.ForeColor = Color.Black;
             }
 
         }
@@ -83,7 +83,7 @@ namespace popitka
 
         private void log_Enter(object sender, EventArgs e)
         {
-           if( log.Text == "Введите логин")
+            if (log.Text == "Введите логин")
             {
                 log.Text = "";
                 log.ForeColor = Color.Black;
@@ -119,15 +119,15 @@ namespace popitka
 
         private void buttonRegistr_Click(object sender, EventArgs e)
         {
-            if (UserNameFild.Text == "Введите имя")
+            if (UserNameFild.Text == "Введите Имя")
             {
-                MessageBox.Show("Введите имя!");
-                    return;
+                MessageBox.Show("Введите Имя!");
+                return;
             }
 
-            if (UserSernameFild.Text == "Введите фамилию")
+            if (UserSernameFild.Text == "Введите Фамилию")
             {
-                MessageBox.Show("Введите фамилию!");
+                MessageBox.Show("Введите Фамилию!");
                 return;
             }
 
@@ -135,23 +135,27 @@ namespace popitka
                 return;
 
             Db db = new Db();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `login`, `pass`, `name`, `sename`) VALUES (@login, @pass, @name, @sername)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `login`, `pass`, `name`, `sername`) VALUES (@login, @pass, @name, @sername)", db.getConnection());
 
-            command.Parameters.Add("@login",MySqlDbType.VarChar ).Value = log.Text;
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = log.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass.Text;
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = UserNameFild.Text;
             command.Parameters.Add("@sername", MySqlDbType.VarChar).Value = UserSernameFild.Text;
 
             db.openConnection();
 
-            if(command.ExecuteNonQuery() == 1)
+            
+            if (command.ExecuteNonQuery()==1)
+                {
+                  MessageBox.Show("Аккаунт был создан");
+                }
+          
+             else
             {
-                MessageBox.Show("Аккаунт был создан");
-            }
-            else
                 MessageBox.Show("Аккаунт не был создан");
+            }
 
-            db.closeConnection();
+            db.closeConnection(); 
         }
 
         public Boolean isUserExist()
