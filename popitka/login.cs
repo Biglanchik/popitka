@@ -23,7 +23,7 @@ namespace popitka
 
         private void closeButt_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButt_MouseEnter(object sender, EventArgs e)
@@ -65,16 +65,28 @@ namespace popitka
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `pass`=@uP", db.getConnection());
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = log;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = pass;
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("Yes");
+            {
+                this.Hide();
+                mainForm mainForm = new mainForm();
+                mainForm.Show();
+            }
+                
             else
                 MessageBox.Show("No");
+        }
+
+        private void RegistLable_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            registrForm registrForm = new registrForm();
+            registrForm.Show();
         }
     }
 }
