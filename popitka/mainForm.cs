@@ -21,5 +21,14 @@ namespace popitka
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainForm mainForm = new mainForm();
+            mainForm.Show();
+        }
+
+        
     }
 }

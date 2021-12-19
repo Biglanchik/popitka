@@ -13,6 +13,7 @@ namespace popitka
 {
     public partial class login : Form
     {
+        sqlfunction sql = new sqlfunction();
         public login()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace popitka
         }
 
         Point lastPoint;
-      
+
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -77,7 +78,7 @@ namespace popitka
                 mainForm mainForm = new mainForm();
                 mainForm.Show();
             }
-                
+
             else
                 MessageBox.Show("No");
         }
@@ -87,6 +88,46 @@ namespace popitka
             this.Hide();
             registrForm registrForm = new registrForm();
             registrForm.Show();
+        }
+
+
+
+        private void buttonLogin_Click_1(object sender, EventArgs e)
+        {
+            String loginUser = log.Text;
+            String passUser = pass.Text;
+            if (loginUser == "admin" && passUser == "admin")
+            {
+                this.Hide();
+                formAdmin adminForm = new formAdmin();
+                adminForm.Show();
+            }
+            else
+            {
+
+                if (sql.loginuser(loginUser, passUser))
+                {
+
+                    this.Hide();
+                    formAdmin form = new formAdmin();
+                    formAdmin.show();
+                }
+
+                else
+                    MessageBox.Show("Ошибка авторизации");
+
+
+            }
+
+
+        }
+    }
+
+    internal class sqlfunction
+    {
+        internal bool loginuser(string loginUser, string passUser)
+        {
+            throw new NotImplementedException();
         }
     }
 }

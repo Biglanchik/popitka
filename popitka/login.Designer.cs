@@ -31,6 +31,7 @@ namespace popitka
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RegistLable = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.pass = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@ namespace popitka
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeButt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.RegistLable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +64,18 @@ namespace popitka
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // RegistLable
+            // 
+            this.RegistLable.AutoSize = true;
+            this.RegistLable.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistLable.ForeColor = System.Drawing.Color.DarkGreen;
+            this.RegistLable.Location = new System.Drawing.Point(129, 376);
+            this.RegistLable.Name = "RegistLable";
+            this.RegistLable.Size = new System.Drawing.Size(134, 16);
+            this.RegistLable.TabIndex = 6;
+            this.RegistLable.Text = "Еще нет аккаунта?";
+            this.RegistLable.Click += new System.EventHandler(this.RegistLable_Click);
+            // 
             // buttonLogin
             // 
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -78,7 +90,7 @@ namespace popitka
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Войти";
             this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click_1);
             // 
             // pass
             // 
@@ -156,18 +168,6 @@ namespace popitka
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // RegistLable
-            // 
-            this.RegistLable.AutoSize = true;
-            this.RegistLable.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistLable.ForeColor = System.Drawing.Color.DarkGreen;
-            this.RegistLable.Location = new System.Drawing.Point(129, 376);
-            this.RegistLable.Name = "RegistLable";
-            this.RegistLable.Size = new System.Drawing.Size(134, 16);
-            this.RegistLable.TabIndex = 6;
-            this.RegistLable.Text = "Еще нет аккаунта?";
-            this.RegistLable.Click += new System.EventHandler(this.RegistLable_Click);
             // 
             // login
             // 

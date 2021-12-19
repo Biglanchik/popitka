@@ -180,7 +180,7 @@ namespace popitka
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = log.Text;
-           
+
 
             adapter.SelectCommand = command;
             adapter.Fill(table);

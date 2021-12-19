@@ -27,5 +27,22 @@ namespace popitka
         {
             return connection;
         }
+        //public bool Registration(string login, string password, string name, string sername)
+        //{
+        //    bool flag = false;
+        //    MySqlCommand command = new MySqlCommand("INSERT INTO `users` ( `login`, `pass`, `name`, `sername`) VALUES (@login, @pass, @name, @sername)", connection);
+
+        //    command.Parameters.AddWithValue("@login", login);
+        //    command.Parameters.AddWithValue("@pass", password);
+        //    command.Parameters.AddWithValue("@name", name);
+        //    command.Parameters.AddWithValue("@sername", sername);
+
+        //    if (command.ExecuteNonQuery()== 1)
+        //    {
+        //        flag = true;
+        //    }
+        //    return flag;
+        //}
+
     }
 }
