@@ -95,7 +95,7 @@ namespace popitka
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
             String loginUser = log.Text;
-            String passUser = pass.Text;
+            String passUser = pass.Text; 
             if (loginUser == "admin" && passUser == "admin")
             {
                 this.Hide();
@@ -104,17 +104,18 @@ namespace popitka
             }
             else
             {
+                buttonLogin_Click(sender, e);
 
-                if (sql.loginuser(loginUser, passUser))
-                {
+                //if (sql.loginuser(loginUser, passUser))
+                //{
 
-                    this.Hide();
-                    formAdmin form = new formAdmin();
-                    formAdmin.show();
-                }
+                //    this.Hide();
+                //    formAdmin form = new formAdmin();
+                //    formAdmin.show();
+                //}
 
-                else
-                    MessageBox.Show("Ошибка авторизации");
+                //else
+                //    MessageBox.Show("Ошибка авторизации");
 
 
             }
