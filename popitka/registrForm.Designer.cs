@@ -32,6 +32,9 @@ namespace popitka
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registrForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RegistLable = new System.Windows.Forms.Label();
+            this.UserSernameFild = new System.Windows.Forms.TextBox();
+            this.UserNameFild = new System.Windows.Forms.TextBox();
             this.buttonRegistr = new System.Windows.Forms.Button();
             this.pass = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,9 +42,6 @@ namespace popitka
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeButt = new System.Windows.Forms.Label();
-            this.UserNameFild = new System.Windows.Forms.TextBox();
-            this.UserSernameFild = new System.Windows.Forms.TextBox();
-            this.RegistLable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +55,7 @@ namespace popitka
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(156)))), ((int)(((byte)(186)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(783, 89);
+            this.label1.Size = new System.Drawing.Size(790, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,10 +75,44 @@ namespace popitka
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 441);
+            this.panel1.Size = new System.Drawing.Size(790, 449);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // RegistLable
+            // 
+            this.RegistLable.AutoSize = true;
+            this.RegistLable.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistLable.ForeColor = System.Drawing.Color.DarkGreen;
+            this.RegistLable.Location = new System.Drawing.Point(329, 406);
+            this.RegistLable.Name = "RegistLable";
+            this.RegistLable.Size = new System.Drawing.Size(116, 16);
+            this.RegistLable.TabIndex = 8;
+            this.RegistLable.Text = "Авторизоваться";
+            this.RegistLable.Click += new System.EventHandler(this.RegistLable_Click);
+            // 
+            // UserSernameFild
+            // 
+            this.UserSernameFild.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserSernameFild.Location = new System.Drawing.Point(480, 138);
+            this.UserSernameFild.Multiline = true;
+            this.UserSernameFild.Name = "UserSernameFild";
+            this.UserSernameFild.Size = new System.Drawing.Size(281, 64);
+            this.UserSernameFild.TabIndex = 7;
+            this.UserSernameFild.Enter += new System.EventHandler(this.UserSernameFild_Enter);
+            this.UserSernameFild.Leave += new System.EventHandler(this.UserSernameFild_Leave);
+            // 
+            // UserNameFild
+            // 
+            this.UserNameFild.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserNameFild.Location = new System.Drawing.Point(95, 138);
+            this.UserNameFild.Multiline = true;
+            this.UserNameFild.Name = "UserNameFild";
+            this.UserNameFild.Size = new System.Drawing.Size(281, 64);
+            this.UserNameFild.TabIndex = 6;
+            this.UserNameFild.Enter += new System.EventHandler(this.UserNameFild_Enter);
+            this.UserNameFild.Leave += new System.EventHandler(this.UserNameFild_Leave);
             // 
             // buttonRegistr
             // 
@@ -146,7 +180,7 @@ namespace popitka
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(783, 89);
+            this.panel2.Size = new System.Drawing.Size(790, 89);
             this.panel2.TabIndex = 0;
             // 
             // closeButt
@@ -162,45 +196,11 @@ namespace popitka
             this.closeButt.Text = "x";
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
             // 
-            // UserNameFild
-            // 
-            this.UserNameFild.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserNameFild.Location = new System.Drawing.Point(95, 138);
-            this.UserNameFild.Multiline = true;
-            this.UserNameFild.Name = "UserNameFild";
-            this.UserNameFild.Size = new System.Drawing.Size(281, 64);
-            this.UserNameFild.TabIndex = 6;
-            this.UserNameFild.Enter += new System.EventHandler(this.UserNameFild_Enter);
-            this.UserNameFild.Leave += new System.EventHandler(this.UserNameFild_Leave);
-            // 
-            // UserSernameFild
-            // 
-            this.UserSernameFild.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserSernameFild.Location = new System.Drawing.Point(480, 138);
-            this.UserSernameFild.Multiline = true;
-            this.UserSernameFild.Name = "UserSernameFild";
-            this.UserSernameFild.Size = new System.Drawing.Size(281, 64);
-            this.UserSernameFild.TabIndex = 7;
-            this.UserSernameFild.Enter += new System.EventHandler(this.UserSernameFild_Enter);
-            this.UserSernameFild.Leave += new System.EventHandler(this.UserSernameFild_Leave);
-            // 
-            // RegistLable
-            // 
-            this.RegistLable.AutoSize = true;
-            this.RegistLable.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistLable.ForeColor = System.Drawing.Color.DarkGreen;
-            this.RegistLable.Location = new System.Drawing.Point(329, 406);
-            this.RegistLable.Name = "RegistLable";
-            this.RegistLable.Size = new System.Drawing.Size(116, 16);
-            this.RegistLable.TabIndex = 8;
-            this.RegistLable.Text = "Авторизоваться";
-            this.RegistLable.Click += new System.EventHandler(this.RegistLable_Click);
-            // 
             // registrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 441);
+            this.ClientSize = new System.Drawing.Size(790, 449);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "registrForm";
